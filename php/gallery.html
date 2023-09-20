@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Gallery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#category-select').on('change', function() {
+                var category = $(this).val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'action.php',
+                    data: { category: category },
+                    success: function(response) {
+                        $('#food-gallery').html(response);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Food Gallery</h1>
+    <form>
+        <label for="category-select">Select Category:</label>
+        <select id="category-select">
+            <option value="desserts">Desserts</option>
+            <option value="fruits">Fruits</option>
+            <option value="healthy">Healthy</option>
+        </select>
+        <button type="submit" value="submit" >submit</button>
+    </form>
+    <div id="food-gallery"></div>
+</body>
+</html>

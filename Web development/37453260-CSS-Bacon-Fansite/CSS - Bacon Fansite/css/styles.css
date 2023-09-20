@@ -1,0 +1,22 @@
+body {
+    background-color: wheat;
+}
+
+p:hover {
+    background-color: white;
+}
+
+#heading {
+
+    font-size: 50px;
+    color: green;
+
+}
+
+
+
+.bacon {
+    background-color: red;
+    border-radius: 100%;
+}
+

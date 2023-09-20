@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PHP Cookies Example</title>
+    
+  </head>
+  <body>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+      <label for="firstName">First Name:</label>
+      <input type="text" name="firstName" id="firstName" />
+      <br />
+      <label for="location">Location:</label>
+      <input type="text" name="location" id="location" />
+      <br />
+      <input type="submit" name="submit" value="Submit" />
+    </form>
+    <?php
+  if (isset($_COOKIE['firstName']) && isset($_COOKIE['location'])) {
+    echo "First Name: " . $_COOKIE['firstName'] . "<br>"; echo "Location: " .
+    $_COOKIE['location'] . "<br />"; } ?>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?forget=1">Forget about me!</a>
+    <?php
+  if (isset($_GET['forget'])) {
+    setcookie('firstName', '', time() - (86400 * 30), "/");
+    setcookie('location', '', time() - (86400 * 30), "/");
+    header("Location: " . $_SERVER['PHP_SELF']);
+  }
+  ?>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+body{
+    background-color: dimgrey;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: serif;
+    text-shadow: black;
+}
+
+.kit {
+    margin: 10% auto;
+   
+}
+
+.pressed{
+    box-shadow: 0 4px 0 4px darkgray;
+    opacity: 0.4;
+}
+.drum {
+    border: 10px solid;
+    line-height: 2;
+    font-size: 3rem;
+    font-family: serif;
+    background-color: deepskyblue;
+    width: 6rem;
+
+}
